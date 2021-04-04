@@ -1,0 +1,33 @@
+{extend name='main'}
+
+{block name="button"}
+
+{/block}
+
+{block name="content"}
+    <table class="layui-hide" id="demo"></table>
+{/block}
+{block name="script"}
+<script>
+    layui.use('table', function(){
+      var table = layui.table;
+      
+      //展示已知数据
+      table.render({
+        elem: '#demo'
+        ,cols: [[ //标题栏
+          {field: 'id', title: 'ID', width: 80, sort: true,fixed: 'left'}
+          ,{field: 'node', title: '用户名', width: 120}
+          ,{field: 'action', title: '邮箱', minWidth: 150}
+        ]]
+        ,url:'/admin/combo/list'
+        ,skin: 'line' //表格风格
+        ,even: true
+        ,page: true //是否显示分页
+        ,limits: [5, 7, 10]
+        ,limit: 5 //每页默认显示的数量
+        ,hight:full-20
+      });
+    });
+    </script>
+{/block}
