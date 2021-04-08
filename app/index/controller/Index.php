@@ -21,31 +21,28 @@ use think\admin\Controller;
  * Class Index
  * @package app\index\controller
  */
-class Index extends Controller
-{
-    public function index()
-    {
-        $this->redirect(sysuri('admin/login/index'));
-    }
+class Index extends Controller {
+  public function index() {
+    //$this->redirect(sysuri('admin/login/index'));
+  }
 
-    /**
-     * 重置系统数据
-     */
-    public function reset()
-    {
-        exit('Disable Reset.');
+  /**
+   * 重置系统数据
+   */
+  public function reset() {
+    exit('Disable Reset.');
 
-        $this->_query('DataUser')->empty();
-        $this->_query('DataUserToken')->empty();
-        $this->_query('DataUserAddress')->empty();
+    $this->_query('DataUser')->empty();
+    $this->_query('DataUserToken')->empty();
+    $this->_query('DataUserAddress')->empty();
 
-        $this->_query('DataUserRebate')->empty();
-        $this->_query('DataUserBalance')->empty();
-        $this->_query('DataUserTransfer')->empty();
+    $this->_query('DataUserRebate')->empty();
+    $this->_query('DataUserBalance')->empty();
+    $this->_query('DataUserTransfer')->empty();
 
-        $this->_query('ShopOrder')->empty();
-        $this->_query('ShopOrderItem')->empty();
-        $this->_query('ShopOrderSend')->empty();
-        $this->_query('DataUserPayment')->empty();
-    }
+    $this->_query('ShopOrder')->empty();
+    $this->_query('ShopOrderItem')->empty();
+    $this->_query('ShopOrderSend')->empty();
+    $this->_query('DataUserPayment')->empty();
+  }
 }

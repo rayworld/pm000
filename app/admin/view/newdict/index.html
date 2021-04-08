@@ -13,7 +13,7 @@
     <!--表格按钮-->
     <blockquote class="layui-elem-quote">
         <!--{if auth("add")}-->
-        <button data-modal='{:url("add")}' data-title="添加数据字典" class='layui-btn layui-btn-sm'>添加</button>
+        <button data-modal='{:url("add")}' data-title="添加组织机构" class='layui-btn layui-btn-sm'>添加</button>
         <!--{/if}-->
 
         <!--{if auth("remove")}-->
@@ -35,7 +35,7 @@
                 <th class='list-table-sort-td' style="width:8%">排序
                 </th>
                 <th class='text-center' style="width:8%">图标</th>
-                <th style="width:100%">数据字典</th>
+                <th style="width:100%">组织机构</th>
                 <th class='text-center layui-hide-xs' style="width:8%">状态</th>
                 <th class='text-center layui-hide-xs' style="width:18%">操作</th>
             </tr>
@@ -57,18 +57,18 @@
                 <td class='text-center nowrap notselect'>
                     {if auth("add")}
                     <!--{if $vo.spt < 3}-->
-                    <a class="layui-btn layui-btn-xs layui-btn-primary" data-title="添加子数据字典"
+                    <a class="layui-btn layui-btn-xs layui-btn-primary" data-title="添加子组织机构"
                         data-modal='{:url("add")}?pid={$vo.id}'>添 加</a>
                     <!--{else}-->
                     <a class="layui-btn layui-btn-xs layui-btn-disabled">添 加</a>
                     <!--{/if}-->
                     {/if}
                     <!--{if auth("edit")}-->
-                    <a data-dbclick class="layui-btn layui-btn-xs" data-title="编辑数据字典"
+                    <a data-dbclick class="layui-btn layui-btn-xs" data-title="编辑组织机构"
                         data-modal='{:url("edit")}?id={$vo.id}'>编 辑</a>
                     <!--{/if}-->
                     <!--{if $vo.status eq 1 and auth("state")}-->
-                    <a class="layui-btn layui-btn-warm layui-btn-xs" data-confirm="确定要禁用数据字典吗？"
+                    <a class="layui-btn layui-btn-warm layui-btn-xs" data-confirm="确定要禁用组织机构吗？"
                         data-action="{:url('state')}" data-value="id#{$vo.ids};status#0"
                         data-csrf="{:systoken('state')}">禁 用</a>
                     <!--{/if}-->
