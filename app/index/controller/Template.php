@@ -19,14 +19,14 @@ use think\admin\Controller;
 use think\admin\service\adminService;
 use think\admin\service\MenuService;
 
-/* 前台界面入口
+/* 合同模版管理
  * Class Index
  * @package app\index\controller
  */
-class Index extends Controller {
+class Template extends Controller {
 
 /**
- * 显示前台首页
+ * 合同模版列表
  * @auth true
  * @menu true
  * @throws \ReflectionException
@@ -45,7 +45,7 @@ class Index extends Controller {
     if (empty($this->menus) && empty($this->login)) {
       $this->redirect(sysuri('admin/login/index'));
     } else {
-      $this->title = '前台首页';
+      $this->title = '合同模版列表';
       $this->fetch();
     }
   }
